@@ -47,7 +47,8 @@
             font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
         }
         .game-container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* 渐变已移到body，保持透明 */
+            background: transparent;
         }
         .feature-card {
             backdrop-filter: blur(10px);
@@ -66,28 +67,28 @@
         }
     </style>
 </head>
-<body class="bg-apple-light-gray text-apple-dark-gray">
+<body class="text-apple-dark-gray" style="background: linear-gradient(120deg, #ff512f 0%, #dd2476 50%, #1fa2ff 100%);">
     <!-- Header -->
-    <header class="bg-white shadow-sm border-b border-gray-200">
+    <header style="background: transparent; margin-bottom: 0; padding-bottom: 0;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 bg-apple-blue rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold text-sm">🐄</span>
                     </div>
-                    <span class="text-xl font-semibold text-apple-dark-gray">Crazy Cattle 3D</span>
+                    <a href="#hero" class="text-xl font-bold text-white hover:underline transition-colors">Crazy Cattle 3D</a>
                 </div>
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#game" class="text-apple-gray hover:text-apple-blue transition-colors">Play Game</a>
-                    <a href="#about" class="text-apple-gray hover:text-apple-blue transition-colors">About</a>
-                    <a href="#features" class="text-apple-gray hover:text-apple-blue transition-colors">Features</a>
+                    <a href="#hero" class="text-white font-semibold hover:text-blue-200 transition-colors">Play Game</a>
+                    <a href="#about" class="text-white font-semibold hover:text-blue-200 transition-colors">About</a>
+                    <a href="#features" class="text-white font-semibold hover:text-blue-200 transition-colors">Features</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="game-container py-16 lg:py-24">
+    <section id="hero" class="py-16 lg:py-24 mt-8" style="margin-top: 2rem; padding-top: 0; background: transparent;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
