@@ -1,0 +1,145 @@
+User-agent: *
+Allow: /
+
+# AI Crawlers - 针对AI爬虫的优化
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: Applebot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: CCBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+# Traditional Search Engines
+User-agent: Googlebot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /search/
+Disallow: /comment/
+Disallow: /author/
+Disallow: /page/
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+# Sitemap
+Sitemap: https://crazycattle3d.link/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 

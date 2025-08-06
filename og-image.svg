@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff512f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#dd2476;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1fa2ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Game Controller Icon -->
+  <g transform="translate(100, 165)">
+    <rect x="0" y="0" width="200" height="120" rx="20" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
+    <circle cx="50" cy="60" r="15" fill="rgba(255,255,255,0.8)"/>
+    <circle cx="150" cy="60" r="15" fill="rgba(255,255,255,0.8)"/>
+    <rect x="80" y="40" width="40" height="40" rx="5" fill="rgba(255,255,255,0.8)"/>
+  </g>
+  
+  <!-- Cattle Emoji -->
+  <text x="350" y="240" font-family="Arial, sans-serif" font-size="120" fill="white">🐄</text>
+  
+  <!-- Title -->
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">Crazy Cattle 3D</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.9)" text-anchor="middle">Play Free Online 3D Cattle Racing Game</text>
+  
+  <!-- Play Button -->
+  <rect x="450" y="450" width="300" height="60" rx="30" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <text x="600" y="485" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">PLAY NOW</text>
+  
+  <!-- URL -->
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)" text-anchor="middle">crazycattle3d.link</text>
+</svg> 
