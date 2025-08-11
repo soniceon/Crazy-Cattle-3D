@@ -15,6 +15,16 @@
     <!-- Canonical URL - 确保没有重定向问题 -->
     <link rel="canonical" href="https://crazycattle3d.link/">
     
+    <!-- Meta tags for sections to prevent duplicate content issues -->
+    <meta name="hero-section" content="https://crazycattle3d.link/#hero">
+    <meta name="about-section" content="https://crazycattle3d.link/#about">
+    <meta name="features-section" content="https://crazycattle3d.link/#features">
+    
+    <!-- Additional SEO meta tags -->
+    <!-- 注意：需要替换为实际的验证码 -->
+    <!-- <meta name="google-site-verification" content="your-actual-verification-code"> -->
+    <!-- <meta name="msvalidate.01" content="your-actual-bing-verification-code"> -->
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Crazy Cattle 3D - Play Free Online 3D Cattle Racing Game">
     <meta property="og:description" content="Experience thrilling 3D cattle racing action with stunning graphics and exciting gameplay.">
@@ -29,8 +39,9 @@
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@crazycattle3d">
-    <meta name="twitter:creator" content="@crazycattle3d">
+    <!-- 注意：需要替换为实际的Twitter账号 -->
+    <!-- <meta name="twitter:site" content="@your-actual-twitter-handle"> -->
+    <!-- <meta name="twitter:creator" content="@your-actual-twitter-handle"> -->
     <meta name="twitter:title" content="Crazy Cattle 3D - Play Free Online 3D Cattle Racing Game">
     <meta name="twitter:description" content="Experience thrilling 3D cattle racing action with stunning graphics and exciting gameplay.">
     <meta name="twitter:image" content="https://crazycattle3d.link/og-image.svg">
@@ -59,6 +70,12 @@
       gtag('js', new Date());
 
       gtag('config', 'G-SG12K0V3VE');
+      
+      // Track game interactions
+      gtag('event', 'page_view', {
+        'page_title': 'Crazy Cattle 3D Game',
+        'page_location': window.location.href
+      });
     </script>
     
     <!-- Structured Data -->
@@ -497,6 +514,20 @@
 
     <!-- Smooth scrolling script -->
     <script>
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                if (perfData) {
+                    gtag('event', 'timing_complete', {
+                        'name': 'load',
+                        'value': Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+                    });
+                }
+            }
+        });
+
+        // Smooth scrolling with error handling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -506,9 +537,28 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Track navigation clicks
+                    gtag('event', 'click', {
+                        'event_category': 'Navigation',
+                        'event_label': this.getAttribute('href')
+                    });
                 }
             });
         });
+
+        // Game iframe error handling
+        const gameIframe = document.querySelector('.game-iframe iframe');
+        if (gameIframe) {
+            gameIframe.addEventListener('load', function() {
+                gtag('event', 'game_loaded');
+            });
+            
+            gameIframe.addEventListener('error', function() {
+                gtag('event', 'game_error');
+                console.error('Game failed to load');
+            });
+        }
 
         // Mobile menu toggle (if needed in future)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
