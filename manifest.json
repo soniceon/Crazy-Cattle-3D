@@ -1,0 +1,51 @@
+{
+  "name": "Crazy Cattle 3D - Free Online 3D Cattle Racing Game",
+  "short_name": "Crazy Cattle 3D",
+  "description": "Play the ultimate 3D cattle racing game free online! Experience thrilling gameplay with stunning graphics and realistic physics.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#007AFF",
+  "theme_color": "#007AFF",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["games", "entertainment", "racing"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Crazy Cattle 3D Game Screenshot"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Play Game",
+      "short_name": "Play",
+      "description": "Start playing Crazy Cattle 3D immediately",
+      "url": "/#hero",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

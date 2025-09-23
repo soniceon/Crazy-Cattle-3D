@@ -25,6 +25,16 @@
     <!-- <meta name="google-site-verification" content="your-actual-verification-code"> -->
     <!-- <meta name="msvalidate.01" content="your-actual-bing-verification-code"> -->
     
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-SG12K0V3VE" as="script">
+    <link rel="preload" href="https://cloud.onlinegames.io/games/2025/unity3/crazy-cattle-3d/index-og.html" as="document">
+    
+    <!-- DNS预解析 -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//cloud.onlinegames.io">
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Crazy Cattle 3D - Play Free Online 3D Cattle Racing Game">
     <meta property="og:description" content="Experience thrilling 3D cattle racing action with stunning graphics and exciting gameplay.">
@@ -47,6 +57,19 @@
     <meta name="twitter:image" content="https://crazycattle3d.link/og-image.svg">
     <meta name="twitter:image:alt" content="Crazy Cattle 3D Game Screenshot">
     
+    <!-- 额外的SEO优化标签 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Crazy Cattle 3D">
+    <meta name="apple-mobile-web-app-title" content="Crazy Cattle 3D">
+    <meta name="msapplication-tooltip" content="Play Crazy Cattle 3D Game">
+    <meta name="msapplication-starturl" content="/">
+    
+    <!-- 语言和地区 -->
+    <meta name="language" content="en">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#007AFF">
     <meta name="msapplication-TileColor" content="#007AFF">
@@ -57,10 +80,25 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileImage" content="/favicon.svg">
     <meta name="msapplication-TileColor" content="#007AFF">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Additional PWA meta tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Crazy Cattle 3D">
+    <meta name="application-name" content="Crazy Cattle 3D">
+    <meta name="msapplication-tooltip" content="Play Crazy Cattle 3D Game">
+    <meta name="msapplication-starturl" content="/">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SG12K0V3VE"></script>
@@ -86,9 +124,13 @@
       "name": "Crazy Cattle 3D",
       "description": "Play Crazy Cattle 3D free online! Experience thrilling 3D cattle racing action with stunning graphics and exciting gameplay.",
       "url": "https://crazycattle3d.link/",
+      "sameAs": [
+        "https://crazycattle3d.link/"
+      ],
       "potentialAction": {
-        "@type": "PlayAction",
-        "target": "https://crazycattle3d.link/#hero"
+        "@type": "SearchAction",
+        "target": "https://crazycattle3d.link/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
     </script>
@@ -119,7 +161,21 @@
         "name": "Crazy Cattle 3D"
       },
       "datePublished": "2025-01-27",
-      "dateModified": "2025-01-27"
+      "dateModified": "2025-01-27",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "gameItem": [
+        {
+          "@type": "Thing",
+          "name": "Cattle Racing",
+          "description": "Control cattle characters in thrilling racing competitions"
+        },
+        {
+          "@type": "Thing", 
+          "name": "3D Graphics",
+          "description": "Stunning 3D graphics with realistic physics"
+        }
+      ]
     }
     </script>
     
@@ -186,6 +242,7 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/seo-monitoring.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -205,31 +262,109 @@
         }
     </script>
     <style>
+        /* 关键CSS内联优化 - 提升首屏渲染速度 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+        
+        /* 防止布局偏移 */
         .game-container {
-            /* 渐变已移到body，保持透明 */
             background: transparent;
+            contain: layout;
         }
+        
         .feature-card {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            will-change: transform;
+            transition: transform 0.3s ease;
         }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
         .game-iframe {
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             overflow: hidden;
+            contain: layout;
         }
+        
+        /* 移动端优化 */
         @media (max-width: 768px) {
             .game-iframe {
                 border-radius: 12px;
             }
+            .feature-card {
+                backdrop-filter: none;
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        
+        /* 性能优化 - 减少重绘 */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        /* 关键渲染路径优化 */
+        .hero-title {
+            font-display: swap;
+        }
+        
+        /* 减少CLS (Cumulative Layout Shift) */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+        
+        /* 游戏iframe确保可见 */
+        .game-iframe iframe {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* 优化动画性能 */
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 提升可访问性 */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* 焦点管理 */
+        a:focus, button:focus {
+            outline: 2px solid #007AFF;
+            outline-offset: 2px;
         }
     </style>
 </head>
-<body class="text-apple-dark-gray" style="background: linear-gradient(120deg, #ff512f 0%, #dd2476 50%, #1fa2ff 100%);">
+<body class="text-apple-dark-gray smooth-scroll" style="background: linear-gradient(120deg, #ff512f 0%, #dd2476 50%, #1fa2ff 100%);">
     <!-- Header -->
     <header style="background: transparent; margin-bottom: 0; padding-bottom: 0;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -253,20 +388,51 @@
     <section id="hero" class="py-16 lg:py-24 mt-8" style="margin-top: 2rem; padding-top: 0; background: transparent;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight hero-title animate-fade-in">
                     Crazy Cattle 3D
                 </h1>
                 <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-                    Experience the ultimate 3D cattle racing adventure with stunning graphics and thrilling gameplay.
+                    Experience the ultimate 3D cattle racing adventure with stunning graphics, realistic physics, and thrilling gameplay. Play the best free online cattle racing game now!
                 </p>
                 <div class="game-iframe mx-auto" style="max-width: 1000px;">
                     <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+                        <!-- 游戏加载指示器 -->
+                        <div id="game-loading" class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-2xl">
+                            <div class="text-white text-center">
+                                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                                <p class="text-lg font-semibold">正在加载游戏...</p>
+                                <p class="text-sm text-gray-300">请稍候</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 游戏占位符 - 如果iframe不工作，显示这个 -->
+                        <div id="game-placeholder" class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center" style="display: none;">
+                            <div class="text-white text-center p-8">
+                                <div class="text-6xl mb-4">🐄</div>
+                                <h3 class="text-2xl font-bold mb-4">Crazy Cattle 3D</h3>
+                                <p class="text-lg mb-6">3D 牛牛赛车游戏</p>
+                                <div class="space-y-2 text-sm">
+                                    <p>🎮 使用 WASD 键控制</p>
+                                    <p>🏁 挑战不同的赛道</p>
+                                    <p>🌟 体验3D图形效果</p>
+                                </div>
+                                <button onclick="tryLoadGame()" class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                    开始游戏
+                                </button>
+                            </div>
+                        </div>
+                        
                         <iframe 
-                            src="https://cloud.onlinegames.io/games/2025/unity3/crazy-cattle-3d/index-og.html"
+                            id="game-iframe"
+                            src=""
                             class="absolute top-0 left-0 w-full h-full border-0"
                             allowfullscreen
-                            loading="lazy"
-                            title="Crazy Cattle 3D Game">
+                            loading="eager"
+                            title="Crazy Cattle 3D Game"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
+                            onload="hideLoadingIndicator()"
+                            onerror="showGameError()">
                         </iframe>
                     </div>
                 </div>
@@ -280,39 +446,39 @@
             <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold text-apple-dark-gray mb-6">
-                        About Crazy Cattle 3D
+                        About Crazy Cattle 3D - The Ultimate 3D Cattle Racing Game
                     </h2>
                     <div class="prose prose-lg text-apple-gray">
                         <p class="mb-4">
-                            Crazy Cattle 3D is an innovative online racing game that brings you into the exciting world of cattle racing with stunning 3D graphics and immersive gameplay. Built with Unity technology, this game delivers smooth performance across all devices.
+                            <strong>Crazy Cattle 3D</strong> is an innovative free online racing game that brings you into the exciting world of <em>cattle racing</em> with stunning 3D graphics and immersive gameplay. Built with Unity technology, this <strong>3D cattle racing game</strong> delivers smooth performance across all devices and platforms.
                         </p>
                         <p class="mb-4">
-                            Navigate through challenging tracks, master different cattle characters, and compete for the best times in this unique racing experience. The game features realistic physics, dynamic environments, and engaging sound effects that create an unforgettable gaming experience.
+                            Navigate through challenging tracks, master different cattle characters, and compete for the best times in this unique <strong>online racing experience</strong>. The game features realistic physics, dynamic environments, and engaging sound effects that create an unforgettable gaming experience for players of all ages.
                         </p>
                         <p>
-                            Whether you're a casual gamer looking for fun or a competitive player seeking challenges, Crazy Cattle 3D offers entertainment for all skill levels with its intuitive controls and progressive difficulty system.
+                            Whether you're a casual gamer looking for fun or a competitive player seeking challenges, <strong>Crazy Cattle 3D</strong> offers entertainment for all skill levels with its intuitive controls and progressive difficulty system. This <em>free online game</em> provides hours of entertainment without any downloads or installations required.
                         </p>
                     </div>
                 </div>
                 <div class="mt-10 lg:mt-0">
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-apple-dark-gray mb-6">Game Highlights</h3>
+                        <h3 class="text-2xl font-bold text-apple-dark-gray mb-6">3D Cattle Racing Game Highlights</h3>
                         <ul class="space-y-4">
                             <li class="flex items-start">
                                 <span class="text-apple-blue text-xl mr-3">🎯</span>
-                                <span class="text-apple-gray">Challenging racing tracks with unique obstacles</span>
+                                <span class="text-apple-gray"><strong>Challenging racing tracks</strong> with unique obstacles and dynamic environments</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-apple-blue text-xl mr-3">🎨</span>
-                                <span class="text-apple-gray">Stunning 3D graphics and smooth animations</span>
+                                <span class="text-apple-gray"><strong>Stunning 3D graphics</strong> and smooth animations powered by Unity engine</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-apple-blue text-xl mr-3">🎮</span>
-                                <span class="text-apple-gray">Intuitive controls for all ages</span>
+                                <span class="text-apple-gray"><strong>Intuitive controls</strong> for all ages - easy to learn, hard to master</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-apple-blue text-xl mr-3">📱</span>
-                                <span class="text-apple-gray">Cross-platform compatibility</span>
+                                <span class="text-apple-gray"><strong>Cross-platform compatibility</strong> - play on desktop, tablet, or mobile</span>
                             </li>
                         </ul>
                     </div>
@@ -514,8 +680,9 @@
 
     <!-- Smooth scrolling script -->
     <script>
-        // Performance monitoring
+        // 高级性能监控 - Core Web Vitals
         window.addEventListener('load', function() {
+            // 基础性能监控
             if ('performance' in window) {
                 const perfData = performance.getEntriesByType('navigation')[0];
                 if (perfData) {
@@ -524,6 +691,46 @@
                         'value': Math.round(perfData.loadEventEnd - perfData.loadEventStart)
                     });
                 }
+            }
+            
+            // Core Web Vitals 监控
+            if ('web-vital' in window) {
+                // 监控 Largest Contentful Paint (LCP)
+                new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                        gtag('event', 'web_vitals', {
+                            'event_category': 'Performance',
+                            'event_label': 'LCP',
+                            'value': Math.round(entry.startTime)
+                        });
+                    }
+                }).observe({entryTypes: ['largest-contentful-paint']});
+                
+                // 监控 First Input Delay (FID)
+                new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                        gtag('event', 'web_vitals', {
+                            'event_category': 'Performance',
+                            'event_label': 'FID',
+                            'value': Math.round(entry.processingStart - entry.startTime)
+                        });
+                    }
+                }).observe({entryTypes: ['first-input']});
+                
+                // 监控 Cumulative Layout Shift (CLS)
+                let clsValue = 0;
+                new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                        if (!entry.hadRecentInput) {
+                            clsValue += entry.value;
+                        }
+                    }
+                    gtag('event', 'web_vitals', {
+                        'event_category': 'Performance',
+                        'event_label': 'CLS',
+                        'value': Math.round(clsValue * 1000)
+                    });
+                }).observe({entryTypes: ['layout-shift']});
             }
         });
 
@@ -547,18 +754,138 @@
             });
         });
 
-        // Game iframe error handling
+        // 游戏加载处理函数
+        function hideLoadingIndicator() {
+            const loading = document.getElementById('game-loading');
+            if (loading) {
+                loading.style.display = 'none';
+            }
+            gtag('event', 'game_loaded', {
+                'event_category': 'Game',
+                'event_label': 'Game Content Loaded'
+            });
+            console.log('Game loaded successfully');
+        }
+        
+        function showGameError() {
+            const loading = document.getElementById('game-loading');
+            const placeholder = document.getElementById('game-placeholder');
+            if (loading) {
+                loading.style.display = 'none';
+            }
+            if (placeholder) {
+                placeholder.style.display = 'flex';
+            }
+            gtag('event', 'game_error', {
+                'event_category': 'Error',
+                'event_label': 'Game Load Failed'
+            });
+            console.error('Game failed to load - showing placeholder');
+        }
+        
+        function tryLoadGame() {
+            const iframe = document.getElementById('game-iframe');
+            const placeholder = document.getElementById('game-placeholder');
+            const loading = document.getElementById('game-loading');
+            
+            if (iframe) {
+                // 尝试多个游戏源
+                const gameSources = [
+                    'https://cloud.onlinegames.io/games/2025/unity3/crazy-cattle-3d/index-og.html',
+                    'https://www.onlinegames.io/games/crazy-cattle-3d/',
+                    'https://html5games.com/crazy-cattle-3d/'
+                ];
+                
+                let currentSource = 0;
+                
+                function tryNextSource() {
+                    if (currentSource < gameSources.length) {
+                        iframe.src = gameSources[currentSource];
+                        currentSource++;
+                        
+                        // 显示加载指示器
+                        if (loading) loading.style.display = 'flex';
+                        if (placeholder) placeholder.style.display = 'none';
+                        
+                        // 设置超时
+                        setTimeout(() => {
+                            if (loading && loading.style.display !== 'none') {
+                                tryNextSource();
+                            }
+                        }, 5000);
+                    } else {
+                        showGameError();
+                    }
+                }
+                
+                tryNextSource();
+            }
+        }
+        
+        // 页面加载完成后自动尝试加载游戏
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                tryLoadGame();
+            }, 1000); // 延迟1秒后开始加载游戏
+        });
+        
+        // 用户交互监控
+        let userInteracted = false;
+        document.addEventListener('click', function() {
+            if (!userInteracted) {
+                userInteracted = true;
+                gtag('event', 'user_interaction', {
+                    'event_category': 'Engagement',
+                    'event_label': 'First Click'
+                });
+            }
+        });
+        
+        // 滚动深度监控
+        let maxScrollDepth = 0;
+        window.addEventListener('scroll', function() {
+            const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollDepth > maxScrollDepth) {
+                maxScrollDepth = scrollDepth;
+                if (maxScrollDepth % 25 === 0) { // 每25%记录一次
+                    gtag('event', 'scroll_depth', {
+                        'event_category': 'Engagement',
+                        'event_label': `${maxScrollDepth}%`,
+                        'value': maxScrollDepth
+                    });
+                }
+            }
+        });
+        
+        // 游戏特定事件跟踪
         const gameIframe = document.querySelector('.game-iframe iframe');
         if (gameIframe) {
             gameIframe.addEventListener('load', function() {
-                gtag('event', 'game_loaded');
-            });
-            
-            gameIframe.addEventListener('error', function() {
-                gtag('event', 'game_error');
-                console.error('Game failed to load');
+                if (window.SEOMonitor) {
+                    window.SEOMonitor.trackGameStart();
+                }
             });
         }
+        
+        // 页面部分可见性跟踪
+        const sections = ['hero', 'about', 'features'];
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionName = entry.target.id;
+                    if (window.SEOMonitor) {
+                        window.SEOMonitor.trackSectionView(sectionName);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                observer.observe(section);
+            }
+        });
 
         // Mobile menu toggle (if needed in future)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
